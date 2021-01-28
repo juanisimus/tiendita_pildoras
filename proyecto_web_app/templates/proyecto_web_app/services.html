@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'proyecto_web_app/base.html' %}
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Services</h1>
+        {% for service in services %}
+            <div>
+                <p>
+                    <h2>{{ service.title }}</h2>
+                    <p style="color: white;">{{ service.content }}</p>
+                    <img src="{{ service.image.url }}" alt="imagen servicio">
+                </p>
+            </div>
+
+        {% endfor %}
+    
+    {% endblock content %}
+    
+</body>
+</html>
